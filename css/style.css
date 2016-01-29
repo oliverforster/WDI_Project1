@@ -2,24 +2,24 @@
   height: 40px;
   width: 40px;
   background-color: red;
-  position: absolute;
-  margin-left: 901px;
-  margin-top: 400px;
+  position: relative;
+  left: 0;
+  top: 400px;
 }
 
 .box2 {
   height: 40px;
   width: 40px;
   background-color: blue;
-  position: absolute;
-  margin-left: 0px;
-  margin-top: 300px;
+  position: relative;
+  left: 0;
+  top: 300px;
 }
 
 .finish {
   height: 300px;
   width: 50px;
-  position: absolute;
+  position: relative;
   margin-left: 900px;
   margin-top: 200px;
   border: 1px solid black;

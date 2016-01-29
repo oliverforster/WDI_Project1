@@ -1,24 +1,32 @@
 $(function (){
   console.log("loaded");
+  var $box1 = $('.box');
+  var $box2 = $('.box2');
+              // red box
+var box1Pos = 0 
 
-var boxLeft = $('.box').offset().left;
-console.log(boxLeft);
-var boxWidth = $('.box').outerWidth(true);
-console.log(boxWidth);
-var box1Pos = boxLeft + boxWidth;
-console.log(box1Pos)
+              // blue box
+var box2Pos = 0
 
+              // finish line
+var finishPos = $('.finish').offset().left;
 
-var finishLeft = $('.finish').offset().left;
-var finishPos = finishLeft;
 console.log(finishPos)
 
+              // win logic for box 1
 function win(box1Pos, finishPos){
-  if(box1Pos > finishPos) return true; return false
+  console.log(box1Pos, box1Pos > finishPos);
+  return box1Pos > finishPos;
 }
+var winner = win(box1Pos, finishPos)
 
-var winner = win()
-console.log(winner)
+
+              // win logic for box 2
+function win2(box2Pos, finishPos){
+  console.log(box2Pos, box2Pos > finishPos);
+  return box2Pos > finishPos;
+}
+var winner2 = win(box2Pos, finishPos)
 
 
 
@@ -30,26 +38,22 @@ console.log(winner)
   
 //red box
   $(window).keyup(function(event) {
-    console.log(event.which)
 
     if (clickCount % 2 === 0) {
 
       if (event.which === 90) {
-        $('.box').animate({
-         'margin-left' : "+=4px"  
-        }, 1);
-        clickCount +=1;;
-        win()
-        console.log(winner);
+        $box1.css({ left: "+=40px" });
+        clickCount +=1;
+        box1Pos = $box1.offset().left + $box1.width();
+        win(box1Pos, finishPos)
+        
       }
     } else if (clickCount % 2 !== 0) {
       if (event.which === 88) {
-        $('.box').animate({
-          'margin-left' : "+=4px"
-        }, 1);
+        $box1.css({ left: "+=40px" });
         clickCount +=1; 
-        win()
-        console.log(winner);
+        box1Pos = $box1.offset().left + $box1.width();
+        win(box1Pos, finishPos)
       }
     }
   });
@@ -61,19 +65,21 @@ console.log(winner)
     if (clickCount2 % 2 === 0) {
 
       if (event.which === 75) {
-        console.log("click");
-        $('.box2').animate({
-          'margin-left' : "+=4px"  
+        $box2.animate({
+          'margin-left' : "+=40px"  
         }, 1);
-        clickCount2 +=1;;
+        clickCount2 +=1;; 
+        box2Pos = $box2.offset().left + $box2.width();
+        win2(box2Pos, finishPos)
       }
     } else if (clickCount2 % 2 !== 0) {
       if (event.which === 76) {
-        console.log("click");
-        $('.box2').animate({
-          'margin-left' : "+=4px"
+        $box2.animate({
+          'margin-left' : "+=40px"
         }, 1);
         clickCount2 +=1; 
+        box2Pos = $box2.offset().left + $box2.width();
+        win2(box2Pos, finishPos)
       }
     }
   });
