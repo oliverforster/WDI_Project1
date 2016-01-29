@@ -12,4 +12,16 @@ $(function (){
     }
 
     });
+
+  $(window).keyup(function(event) {
+  
+    if (event.which === 77) {
+      console.log("click2");
+      $('.box2').animate({
+        'marginTop' : "-=4px" 
+      }, 1)
+    }
+
+    });
+
 });
