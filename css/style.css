@@ -46,3 +46,14 @@
  background-image: url("../images/player2other.png"); 
  background-repeat: no-repeat; 
 }
+
+.resetP1 {
+  background-image: url("../images/player1wins.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  height: 150px;
+  width: 800px;
+  top: 80px;
+  left: 300px;
+}
