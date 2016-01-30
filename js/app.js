@@ -65,6 +65,7 @@ function overallWin (box1Pos, box2Pos){
          $box1.css({ left: "+=4px" });
          clickCount +=1;
          box1Pos = $box1.offset().left + $box1.width();
+         $box1.toggleClass("boxOther")
         // win(box1Pos, finishPos);
          overallWin(box1Pos, box2Pos);
          
@@ -74,7 +75,7 @@ function overallWin (box1Pos, box2Pos){
          $box1.css({ left: "+=4px" });
          clickCount +=1; 
          box1Pos = $box1.offset().left + $box1.width();
-       //  win(box1Pos, finishPos);
+         $box1.toggleClass("boxOther")
          overallWin(box1Pos, box2Pos);
        }
      }
@@ -90,19 +91,17 @@ function overallWin (box1Pos, box2Pos){
      if (clickCount2 % 2 === 0) {
   
        if (event.which === 75) {
-         $box2.animate({
-           'margin-left' : "+=4px"  
-         }, 1);
+         $box2.css({ 'margin-left' : "+=4px" });
          clickCount2 +=1;; 
          box2Pos = $box2.offset().left + $box2.width();
+         $box2.toggleClass("box2Other")
          overallWin(box1Pos, box2Pos);
        }
      } else if (clickCount2 % 2 !== 0) {
        if (event.which === 76) {
-         $box2.animate({
-           'margin-left' : "+=4px"
-         }, 1);
-         clickCount2 +=1; 
+         $box2.css({ 'margin-left' : "+=4px" });
+         clickCount2 +=1;
+         $box2.toggleClass("box2Other") 
          box2Pos = $box2.offset().left + $box2.width();
          overallWin(box1Pos, box2Pos);
        }

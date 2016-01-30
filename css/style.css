@@ -13,7 +13,7 @@
   background-size: cover;
   position: relative;
   left: 0;
-  top: 570px;
+  top: 430px;
 }
 
 .box2 {
@@ -24,19 +24,25 @@
   background-size: cover;
   position: relative;
   left: 0;
-  top: 570px;
+  top: 465px;
 }
 
 .finish {
-  height: 300px;
+  height: 200px;
   width: 50px;
   position: relative;
-  margin-left: 1200px;
-  margin-top: 300px;
-  border: 1px solid black;
+  margin-left: 1220px;
+  margin-top: 270px;
+  background-image: url("../images/finish.png"); 
+  background-repeat: no-repeat;
+  opacity: 0.7;
 }
 
 .boxOther {
  background-image: url("../images/player1other.png"); 
+ background-repeat: no-repeat; 
+}
+.box2Other {
+ background-image: url("../images/player2other.png"); 
  background-repeat: no-repeat; 
 }
