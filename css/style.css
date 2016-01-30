@@ -1,26 +1,42 @@
+.body {
+  background-image: url("../images/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+
 .box {
-  height: 40px;
-  width: 40px;
-  background-color: red;
+  height: 100px;
+  width: 70px;
+  background-image: url("../images/player1.png"); 
+  background-repeat: no-repeat;
+  background-size: cover;
   position: relative;
   left: 0;
-  top: 400px;
+  top: 570px;
 }
 
 .box2 {
-  height: 40px;
-  width: 40px;
-  background-color: blue;
+  height: 100px;
+  width: 70px;
+  background-image: url("../images/player2.png"); 
+  background-repeat: no-repeat;
+  background-size: cover;
   position: relative;
   left: 0;
-  top: 300px;
+  top: 570px;
 }
 
 .finish {
   height: 300px;
   width: 50px;
   position: relative;
-  margin-left: 900px;
-  margin-top: 200px;
+  margin-left: 1200px;
+  margin-top: 300px;
   border: 1px solid black;
+}
+
+.boxOther {
+ background-image: url("../images/player1other.png"); 
+ background-repeat: no-repeat; 
 }

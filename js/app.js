@@ -62,7 +62,7 @@ function overallWin (box1Pos, box2Pos){
      if (clickCount % 2 === 0) {
 
        if (event.which === 90) {
-         $box1.css({ left: "+=40px" });
+         $box1.css({ left: "+=4px" });
          clickCount +=1;
          box1Pos = $box1.offset().left + $box1.width();
         // win(box1Pos, finishPos);
@@ -71,7 +71,7 @@ function overallWin (box1Pos, box2Pos){
        }
      } else if (clickCount % 2 !== 0) {
        if (event.which === 88) {
-         $box1.css({ left: "+=40px" });
+         $box1.css({ left: "+=4px" });
          clickCount +=1; 
          box1Pos = $box1.offset().left + $box1.width();
        //  win(box1Pos, finishPos);
@@ -79,7 +79,7 @@ function overallWin (box1Pos, box2Pos){
        }
      }
     } else {
-      console.log(overallWinner)
+      alert(overallWinner)
     }
   });
 
@@ -91,7 +91,7 @@ function overallWin (box1Pos, box2Pos){
   
        if (event.which === 75) {
          $box2.animate({
-           'margin-left' : "+=40px"  
+           'margin-left' : "+=4px"  
          }, 1);
          clickCount2 +=1;; 
          box2Pos = $box2.offset().left + $box2.width();
@@ -100,7 +100,7 @@ function overallWin (box1Pos, box2Pos){
      } else if (clickCount2 % 2 !== 0) {
        if (event.which === 76) {
          $box2.animate({
-           'margin-left' : "+=40px"
+           'margin-left' : "+=4px"
          }, 1);
          clickCount2 +=1; 
          box2Pos = $box2.offset().left + $box2.width();
@@ -108,7 +108,7 @@ function overallWin (box1Pos, box2Pos){
        }
      }
     }else {
-      console.log(overallWinner)
+      alert(overallWinner)
     }
   });
 });
