@@ -37,9 +37,13 @@ function overallWin (box1Pos, box2Pos){
   var finishPos = $('.finish').offset().left;
   if (box1Pos > finishPos) {
     console.log("P1 wins");
+    $(".resetP1").show(2000);
     return overallWinner = "Player 1 wins";
+    
+
   } else if (box2Pos > finishPos) {
     console.log("P1 wins");
+    $(".resetP2").show(2000);
     return overallWinner = "player 2 wins"
   } else {
     console.log("No winner");
@@ -51,7 +55,8 @@ function overallWin (box1Pos, box2Pos){
   var clickCount =1
   var clickCount2 =1
 
-  $(".resetP1").hide()
+  $(".resetP1").hide();
+  $(".resetP2").hide();
 
   
 //red box
@@ -80,7 +85,6 @@ function overallWin (box1Pos, box2Pos){
        }
      }
     } else {
-      $(".resetP1").show(2000)
     }
   });
 
@@ -91,7 +95,7 @@ function overallWin (box1Pos, box2Pos){
      if (clickCount2 % 2 === 0) {
   
        if (event.which === 75) {
-         $box2.css({ left: "+=4px" });
+         $box2.css({ left: "+=40px" });
          clickCount2 +=1;; 
          box2Pos = $box2.offset().left + $box2.width();
          $box2.toggleClass("box2Other")
@@ -99,7 +103,7 @@ function overallWin (box1Pos, box2Pos){
        }
      } else if (clickCount2 % 2 !== 0) {
        if (event.which === 76) {
-         $box2.css({ left: "+=4px" });
+         $box2.css({ left: "+=40px" });
          clickCount2 +=1;
          $box2.toggleClass("box2Other") 
          box2Pos = $box2.offset().left + $box2.width();
@@ -107,12 +111,20 @@ function overallWin (box1Pos, box2Pos){
        }
      }
     }else {
-      $(".resetP1").show(2000)
     }
   });
 
 $(".resetP1").click(function() {
-  $box1.css({left: "0px"})
+  $box1.css({left: "0px"});
+  $box2.css({left: "0px"});
+  overallWinner = 0;
+  $(".resetP1").hide();
+})
+$(".resetP2").click(function() {
+  $box1.css({left: "0px"});
+  $box2.css({left: "0px"});
+  overallWinner = 0;
+  $(".resetP2").hide();
 })
 
 });
