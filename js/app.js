@@ -13,27 +13,13 @@ var finishPos = $('.finish').offset().left;
 
 console.log(finishPos)
 
-//               // win logic for box 1
-// function win(box1Pos, finishPos){
-//   console.log(box1Pos, box1Pos > finishPos);
-//   return box1Pos > finishPos;
-// }
-// var winner = win(box1Pos, finishPos)
-
-
-//               // win logic for box 2
-// function win2(box2Pos, finishPos){
-//   console.log(box2Pos, box2Pos > finishPos);
-//   return box2Pos > finishPos;
-// }
-// var winner2 = win(box2Pos, finishPos)
-
 
 
               // overall win logic
 var overallWinner = 0
 
 function overallWin (box1Pos, box2Pos){
+  console.log("overallWin", box1Pos, box2Pos);
   var finishPos = $('.finish').offset().left;
   if (box1Pos > finishPos) {
     console.log("P1 wins");
@@ -84,7 +70,6 @@ function overallWin (box1Pos, box2Pos){
          overallWin(box1Pos, box2Pos);
        }
      }
-    } else {
     }
   });
 
@@ -96,7 +81,7 @@ function overallWin (box1Pos, box2Pos){
   
        if (event.which === 75) {
          $box2.css({ left: "+=40px" });
-         clickCount2 +=1;; 
+         clickCount2 +=1;
          box2Pos = $box2.offset().left + $box2.width();
          $box2.toggleClass("box2Other")
          overallWin(box1Pos, box2Pos);
@@ -110,22 +95,17 @@ function overallWin (box1Pos, box2Pos){
          overallWin(box1Pos, box2Pos);
        }
      }
-    }else {
     }
   });
 
-$(".resetP1").click(function() {
+$(".reset").click(function() {
   $box1.css({left: "0px"});
   $box2.css({left: "0px"});
+  box1Pos = 0;
+  box2Pos = 0;
   overallWinner = 0;
-  $(".resetP1").hide();
-})
-$(".resetP2").click(function() {
-  $box1.css({left: "0px"});
-  $box2.css({left: "0px"});
-  overallWinner = 0;
-  $(".resetP2").hide();
-})
+  $(".reset").hide();
+});
 
 });
 
