@@ -5,7 +5,6 @@ $(function (){
   var race = 0;
   var gun = new Audio("sounds/gun.wav");
   var cheer = new Audio("sounds/cheer.wav");
-              // red box
 var box1Pos = 0 
 
               // blue box
@@ -128,13 +127,7 @@ $(".reset").click(function() {
   $(".race").show();
   cheer.pause();
   cheer.currentTime = 0;
-
-
-});
-
-
-
-
+  });
 
 });
 
