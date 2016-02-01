@@ -2,6 +2,9 @@ $(function (){
   console.log("loaded");
   var $box1 = $('.box');
   var $box2 = $('.box2');
+  var race = 0;
+  var gun = new Audio("sounds/gun.wav");
+  var cheer = new Audio("sounds/cheer.wav");
               // red box
 var box1Pos = 0 
 
@@ -33,7 +36,6 @@ function overallWin (box1Pos, box2Pos){
     return overallWinner = "player 2 wins"
   } else {
     console.log("No winner");
-    // return false;
 
   }
 }
@@ -45,9 +47,20 @@ function overallWin (box1Pos, box2Pos){
   $(".resetP2").hide();
 
   
-//red box
-  $(window).keyup(function(event) {
+$(".race").click(function() {
+  $(".race").text("On Your Marks");
+  setTimeout(function(){$(".race").text("Get Set")}, 1000)
+  setTimeout(function(){$(".race").text("go");
+    gun.play()
+    race = 1;
+    cheer.play()
+    $(".race").hide(500);
+    }, 2000)
+  })
 
+
+  $(window).keyup(function(event) {
+  if (race === 1) {
     if (overallWinner === 0){
 
      if (clickCount % 2 === 0) {
@@ -71,11 +84,12 @@ function overallWin (box1Pos, box2Pos){
        }
      }
     }
+  }
   });
 
 //blue box
   $(window).keyup(function(event) {
-
+  if (race === 1) {
     if (overallWinner === 0){
      if (clickCount2 % 2 === 0) {
   
@@ -96,7 +110,11 @@ function overallWin (box1Pos, box2Pos){
        }
      }
     }
+  }
   });
+
+
+
 
 $(".reset").click(function() {
   $box1.css({left: "0px"});
@@ -104,8 +122,19 @@ $(".reset").click(function() {
   box1Pos = 0;
   box2Pos = 0;
   overallWinner = 0;
+  race = 0;
+  $(".race").text("Race");
   $(".reset").hide();
+  $(".race").show();
+  cheer.pause();
+  cheer.currentTime = 0;
+
+
 });
+
+
+
+
 
 });
 

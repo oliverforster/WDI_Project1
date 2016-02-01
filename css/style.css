@@ -67,3 +67,20 @@
   top: 80px;
   left: 300px;
 }
+
+.race {
+  position: absolute;
+  top: 250px;
+  left: 600px;
+  background-color: black;
+  height: 200px;
+  width: 200px;
+  font-family: 'Press Start 2P';
+  font-size: 32px;
+  line-height: 60px;
+  text-align: center;
+  color: white;
+  border: 2px solid blue;
+  border-radius: 4px;
+
+}
