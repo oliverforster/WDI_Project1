@@ -50,7 +50,7 @@ $(window).keyup(function(event) {
     if (overallWinner === 0){
      if (clickCount % 2 === 0) {
         if (event.which === 90) {
-         $box1.css({ left: "+=40px" });
+         $box1.css({ left: "+=8px" });
          clickCount +=1;
          box1Pos = $box1.offset().left + $box1.width();
          $box1.toggleClass("boxOther")
@@ -59,7 +59,7 @@ $(window).keyup(function(event) {
        }
      } else if (clickCount % 2 !== 0) {
        if (event.which === 88) {
-         $box1.css({ left: "+=40px" });
+         $box1.css({ left: "+=8px" });
          clickCount +=1; 
          box1Pos = $box1.offset().left + $box1.width();
          $box1.toggleClass("boxOther")
@@ -76,7 +76,7 @@ $(window).keyup(function(event) {
      if (clickCount2 % 2 === 0) {
   
        if (event.which === 75) {
-         $box2.css({ left: "+=40px" });
+         $box2.css({ left: "+=8px" });
          clickCount2 +=1;
          box2Pos = $box2.offset().left + $box2.width();
          $box2.toggleClass("box2Other")
@@ -84,7 +84,7 @@ $(window).keyup(function(event) {
        }
      } else if (clickCount2 % 2 !== 0) {
        if (event.which === 76) {
-         $box2.css({ left: "+=40px" });
+         $box2.css({ left: "+=8px" });
          clickCount2 +=1;
          $box2.toggleClass("box2Other") 
          box2Pos = $box2.offset().left + $box2.width();

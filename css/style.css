@@ -95,9 +95,6 @@
   color: yellow;
 }
 
-.box:hover {
-  background-image: url("../images/player1cheer.png")
-}
-.box2:hover {
-  background-image: url("../images/player2cheer.png")
-}
+.box:hover {background-image: url("../images/player1cheer.png")}
+
+.box2:hover { background-image: url("../images/player2cheer.png")}
