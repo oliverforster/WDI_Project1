@@ -6,45 +6,33 @@ $(function (){
   var gun = new Audio("sounds/gun.wav");
   var cheer = new Audio("sounds/cheer.wav");
 var box1Pos = 0 
-
               // blue box
 var box2Pos = 0
 
               // finish line
 var finishPos = $('.finish').offset().left;
 
-console.log(finishPos)
-
-
-
-              // overall win logic
+             // overall win logic
 var overallWinner = 0
 
 function overallWin (box1Pos, box2Pos){
   console.log("overallWin", box1Pos, box2Pos);
   var finishPos = $('.finish').offset().left;
   if (box1Pos > finishPos) {
-    console.log("P1 wins");
     $(".resetP1").show(2000);
     return overallWinner = "Player 1 wins";
     
-
   } else if (box2Pos > finishPos) {
-    console.log("P1 wins");
     $(".resetP2").show(2000);
     return overallWinner = "player 2 wins"
   } else {
-    console.log("No winner");
-
   }
 }
-
   var clickCount =1
   var clickCount2 =1
 
   $(".resetP1").hide();
   $(".resetP2").hide();
-
   
 $(".race").click(function() {
   $(".race").text("On Your Marks");
@@ -57,21 +45,17 @@ $(".race").click(function() {
     }, 2000)
   })
 
-
-  $(window).keyup(function(event) {
+$(window).keyup(function(event) {
   if (race === 1) {
     if (overallWinner === 0){
-
      if (clickCount % 2 === 0) {
-
-       if (event.which === 90) {
+        if (event.which === 90) {
          $box1.css({ left: "+=40px" });
          clickCount +=1;
          box1Pos = $box1.offset().left + $box1.width();
          $box1.toggleClass("boxOther")
         // win(box1Pos, finishPos);
-         overallWin(box1Pos, box2Pos);
-         
+         overallWin(box1Pos, box2Pos);   
        }
      } else if (clickCount % 2 !== 0) {
        if (event.which === 88) {
@@ -86,7 +70,6 @@ $(".race").click(function() {
   }
   });
 
-//blue box
   $(window).keyup(function(event) {
   if (race === 1) {
     if (overallWinner === 0){
@@ -112,9 +95,6 @@ $(".race").click(function() {
   }
   });
 
-
-
-
 $(".reset").click(function() {
   $box1.css({left: "0px"});
   $box2.css({left: "0px"});
@@ -122,7 +102,7 @@ $(".reset").click(function() {
   box2Pos = 0;
   overallWinner = 0;
   race = 0;
-  $(".race").text("Race");
+  $(".race").text("RACE  Queen Z/X  Barack K/L");
   $(".reset").hide();
   $(".race").show();
   cheer.pause();
