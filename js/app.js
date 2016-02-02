@@ -115,7 +115,7 @@ $(".reset").click(function() {
   box2Pos = 0;
   overallWinner = 0;
   race = 0;
-  $(".race").text("RACE  Queen Z/X  Barack K/L");
+  $(".race").text("RACE  Queen Z/X  Fred K/L");
   $(".reset").hide();
   $(".race").show();
   cheer.pause();
