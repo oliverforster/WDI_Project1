@@ -1,13 +1,17 @@
 $(function (){
-  console.log("loaded");
+
+        // racers
   var $box1 = $('.box');
+  var box1Pos = 0 
   var $box2 = $('.box2');
+  var box2Pos = 0
+
+          // race variables
   var race = 0;
   var gun = new Audio("sounds/gun.wav");
   var cheer = new Audio("sounds/cheer.wav");
-var box1Pos = 0 
-              // blue box
-var box2Pos = 0
+
+
 
               // finish line
 var finishPos = $('.finish').offset().left;
@@ -33,6 +37,8 @@ function overallWin (box1Pos, box2Pos){
 
   $(".resetP1").hide();
   $(".resetP2").hide();
+
+              // start button
   
 $(".race").click(function() {
   $(".race").text("On Your Marks");
@@ -44,6 +50,9 @@ $(".race").click(function() {
     $(".race").hide(500);
     }, 2000)
   })
+
+
+            // the queen
 
 $(window).keyup(function(event) {
   if (race === 1) {
@@ -70,6 +79,8 @@ $(window).keyup(function(event) {
   }
   });
 
+          // Obama
+
   $(window).keyup(function(event) {
   if (race === 1) {
     if (overallWinner === 0){
@@ -95,6 +106,8 @@ $(window).keyup(function(event) {
   }
   });
 
+
+          // reset airplane
 $(".reset").click(function() {
   $box1.css({left: "0px"});
   $box2.css({left: "0px"});
